@@ -18,15 +18,17 @@ public class Policy
       weight = 0.0;
       smoker = "";
    }
-   /*overloaded constructor
-   @param pn for Policy Number
-   @param p for provider
-   @param a for age
-   @param fn for first name
-   @param ln for last name
-   @param s for smoker
-   @param h for height
-   @param w for weight*/
+   /**
+      overloaded constructor
+      @param pn for Policy Number
+      @param p for provider
+      @param a for age
+      @param fn for first name
+      @param ln for last name
+      @param s for smoker
+      @param h for height
+      @param w for weight
+   */
    public Policy(int pn, String p, String fn, String ln, int a, String s, double h, double w) 
    {
       policyNum = pn;
@@ -39,92 +41,180 @@ public class Policy
       weight = w;
    }
    
-   //setter for policyNum
+   /**
+      setter for policyNum
+      @param pn The policy number of the user.
+   */
+   
    public void setPolicyNum(int pn)
    {
       policyNum = pn;
    }
-   //setter for provider
+   
+   /**
+      setter for provider
+      @param p The provider of the user.
+   */
+   
    public void setProvider(String p)
    {
       provider = p;
    }
-   //setter for age
+   
+   /**
+      setter for age
+      @param a The age of the user.
+   */
+   
    public void setAge(int a)
    {
       age = a;
    }
-   //setter for firstName
+   
+   /**
+      setter for firstName
+      @param fn The first name of the user.
+   */
    public void setFirstName(String fn)
    {
       firstName = fn;
    }
-   //setter for lastName
+   
+   /**
+      setter for lastName
+      @param ln The last name of the user.
+   */
+   
    public void setLastName(String ln)
    {
       lastName = ln;
    }
-   //setter for height
+   
+   /**
+      setter for height
+      @param h The height of the user.
+   */
+   
    public void setHeight(double h)
    {
       height = h;
    }
-   //setter for weight
+   
+   /**
+      setter for weight
+      @param w The weight of the user.
+   */
+   
    public void setWeight(double w)
    {
       weight = w;
    }
-   //setter for smoker
+   
+   /**
+      setter for smoker
+      @param s The status of being a smoker.
+   */
+   
    public void setSmoker(String s)
    {
       smoker = s;
    }
-   //getter for policyNum
+   
+   /**
+      getter for policyNum
+      @return The value of the policy number.
+   */
+   
    public int getPolicyNum()
    {
       return policyNum;
    }
-   //getter for provider
+   
+   /**
+      getter for provider
+      @return The provider of the user.
+   */
+   
    public String getProvider()
    {
       return provider;
    } 
-   //getter for age
+   
+   /**
+      getter for age
+      @return The age of the user.
+   */
+   
    public int getAge()
    {
       return age;
    }
-   //getter for firstName
+   
+   /**
+      getter for firstName
+      @return The first name of the user.
+   */
+   
    public String getFirstName()
    {
       return firstName;
    }
-   //getter for lastName
+   
+   /**
+      getter for lastName
+      @return The last name of the user.
+   */
+   
    public String getLastName()
    {
       return lastName;
    }
-   //getter for height
+   
+   /**
+      getter for height
+      @return The height of the user.
+   */
+   
    public double getHeight()
    {
       return height;
    }
-   //getter for weight
+   
+   /**
+      getter for weight
+      @return The weight of the user.
+   */
+   
    public double getWeight()
    {
       return weight;
    }
-   //getter for smoker
+   
+   /**
+      getter for smoker
+      @return The smoking status of the user.
+   */
+   
    public String getSmoker()
    {
       return smoker;
    }
-   //getter for bmi
+   
+   /**
+      getter for bmi
+      @return The bmi of the user.
+   */
+   
    public double getBmi()
    {
       return ((weight*703)/(height*height));
    }
-   //method for insurance cost
+   
+   /**
+      method for insurance cost
+      @return The cost of the policy.
+   */
+   
    public double getPolicyCost()
    {
       double policyCost = 600.0; //base cost of policy
