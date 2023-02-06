@@ -23,11 +23,12 @@ public class Policy {
       @param userHeight for height (in inches)
       @param userWeight for weight (in pounds)
    */
-   public Policy(String userPolicyNumber, String userProvider, String userFirstName, String userLastName, String userSmokingStatus, double userHeight, double userWeight) {
+   public Policy(String userPolicyNumber, String userProvider, String userFirstName, String userLastName, int userAge, String userSmokingStatus, double userHeight, double userWeight) {
       policyNumber = userPolicyNumber;
       provider = userProvider;
       firstName = userFirstName;
       lastName = userLastName;
+      age = userAge;
       smokingStatus = userSmokingStatus;
       height = userHeight;
       weight = userWeight;
@@ -48,6 +49,10 @@ public class Policy {
    
    public void setLastName(String userLastName) { //@param userLastName
       lastName = userLastName;
+   }
+   
+   public void setAge(int userAge) { //@param userAge
+      age = userAge;
    }
    
    public void setSmokingStatus(String userSmokingStatus) { //@param userSmokingStatus
@@ -79,6 +84,9 @@ public class Policy {
       return lastName;
    }
    
+   public int getAge() { //@return age
+      return age;
+   }
    public String getSmokingStatus() { //@return smokingStatus
       return smokingStatus;
    }
@@ -104,7 +112,8 @@ public class Policy {
       SMOKER_FEE = 100;
       MAX_BMI = 35;
       BMI_FEE = ((calculateBMI() - MAX_BMI) *20);
-      double total = (double)BASE_FEE;
+      double total; 
+      total = BASE_FEE;
       
       if(age > MAX_AGE) { //testing for additonal fees
          total += AGE_FEE;
