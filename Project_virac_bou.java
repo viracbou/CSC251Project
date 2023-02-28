@@ -88,7 +88,8 @@ public class Project_virac_bou{ //open the class container
             System.out.println();
          }
          
-         
+         System.out.printf("The number of policies with a smoker is: %d", smokerCount); //print out the total number of smokers
+         System.out.printf("\nThe number of policies with a smoker is: %d", nonSmokerCount); //print out the total number on non-smokers
          
       }//close the "try" block of code
       
