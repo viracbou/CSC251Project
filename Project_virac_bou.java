@@ -20,7 +20,7 @@ public class Project_virac_bou{ //open the class container
          File file = new File("PolicyInformation.txt");
          
          /* Pass a reference to the File object as an argument to the Scanner class constructor (i.e., file) */                             
-         Scanner inputFile = new Scanner(file);   
+         Scanner inputFile = new Scanners(file);   
          
          //Create an array list to store objects. The ArrayList will hold Policy objects.
          ArrayList<Policy> policy = new ArrayList<Policy>();
