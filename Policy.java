@@ -1,37 +1,19 @@
 public class Policy {
-   private String policyNumber, provider, firstName, lastName, smokingStatus; //Declaration of fields
-   private int age;
-   private double height, weight;
-   
+   private String policyNumber, provider;
+   private PolicyHolder ph;
+  
    public Policy() { // Default/no-arg constructor
       policyNumber = "";
       provider= "";
-      firstName = "";
-      lastName = "";
-      age = 0;
-      smokingStatus = "";
-      height = 0.0;
-      weight = 0.0;
    }
    
    /**Overloaded Constructor
       @param userPolicyNum for policyNumber
       @param userProvider for provider
-      @param userFirstName for firstName
-      @param userLastName for lastName
-      @param userSmokingStatus for smokingStatus
-      @param userHeight for height (in inches)
-      @param userWeight for weight (in pounds)
    */
-   public Policy(String userPolicyNumber, String userProvider, String userFirstName, String userLastName, int userAge, String userSmokingStatus, double userHeight, double userWeight) {
+   public Policy(String userPolicyNumber, String userProvider) {
       policyNumber = userPolicyNumber;
       provider = userProvider;
-      firstName = userFirstName;
-      lastName = userLastName;
-      age = userAge;
-      smokingStatus = userSmokingStatus;
-      height = userHeight;
-      weight = userWeight;
    }
    
    /////////////Setters//////////////
@@ -43,30 +25,7 @@ public class Policy {
       provider = userProvider;
    }
    
-   public void setFirstName(String userFirstName) { //@param userFirstName
-      firstName = userFirstName;
-   }
-   
-   public void setLastName(String userLastName) { //@param userLastName
-      lastName = userLastName;
-   }
-   
-   public void setAge(int userAge) { //@param userAge
-      age = userAge;
-   }
-   
-   public void setSmokingStatus(String userSmokingStatus) { //@param userSmokingStatus
-      smokingStatus = userSmokingStatus;
-   }
-   
-   public void setHeight(double userHeight) { //@param userHeight (in inches)
-      height = userHeight;
-   }
-   
-   public void setWeight(double userWeight) { //@param userWEight (in pounds)
-      weight = userWeight;
-   }
-   
+      
    /////////////Getters//////////////
    public String getPolicyNumber() { //@return policyNumber
       return policyNumber;
@@ -76,33 +35,7 @@ public class Policy {
       return provider;
    }
    
-   public String getFirstName() { //@return firstName
-      return firstName;
-   }
-   
-   public String getLastName() { //@return lastName
-      return lastName;
-   }
-   
-   public int getAge() { //@return age
-      return age;
-   }
-   public String getSmokingStatus() { //@return smokingStatus
-      return smokingStatus;
-   }
-   
-   public double getHeight() { //@return height
-      return height;
-   }
-   
-   public double getWeight() { //@return weight
-      return weight;
-   }
-   
-   public double calculateBMI() { //@return calculated BMI
-      return ((weight * 703) / (height * height));
-   }
-   
+     
    public double calculatePrice() { //@return calucated price of the insturance policy
       final int BASE_FEE, MAX_AGE, AGE_FEE, SMOKER_FEE, MAX_BMI;
       final double BMI_FEE;
@@ -125,5 +58,15 @@ public class Policy {
          total += BMI_FEE;
       }
       return total;
+   }
+   
+   /**
+   @return A string that describes the Policy
+   */
+   public String toString() {
+      return String.format("Policy Number: " + policyNumber +
+                           "\nProvider Name: " + providerName +
+                           "\n" + ph + //call PolicyHolder's toString() method
+                           "\nPolicy Price: $%.2f", getPrice());
    }
 }
